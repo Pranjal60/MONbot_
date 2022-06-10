@@ -1,0 +1,33 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <SoftwareSerial.h>
+
+int led1 = 13;
+
+SoftwareSerial Bluetooth(0, 1);
+char Data;
+void sendData(String transmitData){
+Bluetooth.println(transmitData);}
+
+void setup(){
+    Bluetooth.begin(9600);
+    pinMode(led1,OUTPUT);
+   ;
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+ if(Bluetooth.available()){
+        Data=Bluetooth.read();
+                 if(Data==('F')){
+            digitalWrite(led1,1);
+            sendData("Light ON");
+        }
+        if(Data==('B')){
+            digitalWrite(led1,0);
+            sendData(" Light OFF");
+        }
+ }
+  
+}
