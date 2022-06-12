@@ -13,4 +13,4 @@
 <br><br><br><br>
 <img src = ./Pranjal/Assets/spot.gif  alt = "Boston Dynamics spot.gif">
 <br><br><br><br>
-<img src = ./Pranjal/Assets/petoi.gif alt = "Petoi.gif>
+<img src = ./Pranjal/Assets/petoi.gif alt = "Petoi.gif">
