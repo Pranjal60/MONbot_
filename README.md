@@ -8,9 +8,13 @@
 <br><br><br>
 <h1>Visuals!!</h1>
 <img src = ./Pranjal/Assets/MONbot.gif  alt = "MONbot.gif">
+  <p>MONbot!!!</p>
 <br><br><br><br>
 <img src = ./Pranjal/Assets/MONbot_img.jpeg alt = "MONbot_img.jpeg">
+  <p>MONbot!!!</p>
 <br><br><br><br>
 <img src = ./Pranjal/Assets/spot.gif  alt = "Boston Dynamics spot.gif">
+  <p>Boston Dynamics Spot.</p>
 <br><br><br><br>
-<img src = ./Pranjal/Assets/petoi.gif alt = "Petoi.gif">
+<img src = ./Pranjal/Assets/petoi.gif alt = "Petoi Bittle.gif">
+<p>Petoi Bittle</p>
