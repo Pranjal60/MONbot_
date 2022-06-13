@@ -1,0 +1,136 @@
+#include <Servo.h>
+
+Servo upperLeg1, upperLeg2,upperLeg3,upperLeg4,lowerLeg1, lowerLeg2, lowerLeg3, lowerLeg4; // Giving names to servo
+char val; 
+int led =13;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(led, OUTPUT);
+    upperLeg1.attach(11);
+  upperLeg2.attach(10);
+  upperLeg3.attach(9);
+  upperLeg4.attach(8);
+  lowerLeg1.attach(7);
+  lowerLeg2.attach(6);
+  lowerLeg3.attach(5);
+  lowerLeg4.attach(4);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+  if(Serial.available()>0){
+    val = Serial.read();
+  Serial.println(val);
+
+  if(val == 'V')
+  {
+  digitalWrite(led, HIGH);
+  }
+
+    else if(val == 'v'){
+    digitalWrite( led, LOW);
+    }
+    else{}
+  }
+
+    //Button HeadLights on Software
+      // Lifts Up the MONbot
+     else if(val == 'W')
+    { 
+      while(true)
+      { 
+        if(Serial.available()>0)
+        {
+          char a = Serial.read();
+          
+           Serial.println(a);
+          if(a=='W')
+          {
+            Serial.println("loope end");
+            break;
+            }// if Staement close
+          }// if Staement close
+        upperLeg1.write(75);
+        upperLeg2.write(75);
+        upperLeg3.write(110);
+        upperLeg4.write(110);
+
+        lowerLeg1.write(87);
+        lowerLeg2.write(87);
+        lowerLeg3.write(83);
+        lowerLeg4.write(83);
+        delay(100);
+      }// while loop close
+    }//if statement close
+
+
+ // Turn off Headlight Button in Software
+      // MONbot moves down
+
+    if(val == 'w' ){ 
+      while(true){ 
+        if(Serial.available()>0){
+          char a = Serial.read();
+            Serial.println(val);
+          if(a=='w'){
+            Serial.println("Small W");
+            break;
+           }//if Staement close
+          }//if Staement close
+        upperLeg1.write(130);
+        upperLeg2.write(130);
+        upperLeg3.write(60);
+        upperLeg4.write(60);
+
+        lowerLeg1.write(180);
+        lowerLeg2.write(180);
+        lowerLeg3.write(0);
+        lowerLeg4.write(0);
+        delay(100);
+      }// while loop close
+  }//if Staement close
+
+
+    //   Forward button in Software
+  // Moves the bot in forward direction
+    if(val == 'F'){ 
+      while(true){ 
+        if(Serial.available()>0){
+          char a = Serial.read();
+          if(a=='F'){
+            Serial.println("Forward");
+            break;
+            }// if statement close
+          }//if statement close
+//          Legs 1, 3 Controlled.
+        for(int i=60, j=170;i<111 && j>99;i++, j--)
+        {
+          upperLeg1.write(i);
+          lowerLeg3.write(i);
+          lowerLeg1.write(j);
+          upperLeg3.write(j);
+          delay(5);
+          }// for loop close
+        delay(500);
+
+//          Legs 2, 4 Controlled.
+        for(int i=60, j=170;i<111 && j>99;i++, j--)
+        {
+          upperLeg2.write(i);
+          lowerLeg4.write(i);
+          lowerLeg2.write(j);
+          upperLeg4.write(j);
+          delay(5);
+          }//for loop close
+          delay(500);
+        }//while loop close
+      }// if statement close
+
+
+
+    
+
+  }
