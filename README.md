@@ -4,8 +4,9 @@ MONbot is a <mark>quadruped robot</mark> which is our project for the  <mark>Cha
 We are still into the development phase of this project with some common motions like fordward, backward, up, and down movement. We are planning to improvise these motions and work upon the hip joint to get more <mark>Degrees of freedom.</mark>
 <br><br><br> 
 The bootcamp had ended, in june, now it is in possession of the team and thety are trying to work on it remotely.
--- 21 August 2022
+
 The project is inspired form Boston Dynamics and Petoi Bittle has a good deal of applications, ranging from <mark>fun ... to navigation ...to defence support!
+  <br> -- 21 August 2022
 
 <br><br><br>
 <h1>Visuals!!</h1>
